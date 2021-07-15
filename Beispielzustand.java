@@ -1,5 +1,6 @@
 
 
+
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
@@ -17,6 +18,19 @@ public class Beispielzustand
     private GeometrischeBildoperationen sHori;
     private GeometrischeBildoperationen sVerti;
     private GeometrischeBildoperationen dLinks;
+    private Mehrpixeloperationen mehrpixe1;
+    private Picture picture1;
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
 
     /**
      * Konstruktor fuer die Test-Klasse Beispielzustand
@@ -35,12 +49,15 @@ public class Beispielzustand
     {
         p1 = new Picture("iris.jpg");
         p1.display();
-        sHori = new GeometrischeBildoperationen();
-        sHori.setOperation(1);
-        sVerti = new GeometrischeBildoperationen();
-        sVerti.setOperation(2);
-        dLinks = new GeometrischeBildoperationen();
-        dLinks.setOperation(3);
+        // sHori = new GeometrischeBildoperationen();
+        // sHori.setOperation(1);
+        // sVerti = new GeometrischeBildoperationen();
+        // sVerti.setOperation(2);
+        // dLinks = new GeometrischeBildoperationen();
+        // dLinks.setOperation(3);
+        mehrpixe1 = new Mehrpixeloperationen();
+        double[][] filter = {{0,-1,0},{-1,4,-1},{0,-1,0}};
+        picture1 = mehrpixe1.faltung(p1, filter );
     }
 
     /**
